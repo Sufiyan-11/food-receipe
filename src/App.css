@@ -1,0 +1,137 @@
+.logo-img{
+    width: 100px;
+    height: 100px;
+}
+.navbdr{
+    border-bottom: 3px solid #379960;
+    background-color: #F6FFFA;
+}
+.astyle{
+    text-decoration: none;
+    color: #379960;
+}
+.astyle:hover{
+    color: #8ED429;
+}
+.banner{
+    background-image: url("./assets/receipebanner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin-top: 129px;
+    display: flex;
+    align-items: center;
+}
+.bg-dark-overlay{
+    position: relative;
+      z-index: 0;
+  }
+  
+  .bg-dark-overlay:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(47, 44, 47, 0.4);
+  }
+  .head-size{
+    font-size: 100px;
+  
+  }
+.homeimg{
+    margin-left: 230px;
+    margin-top: 236px;
+}
+.pclr{
+    color: grey;
+}
+.learnbtn{
+    height: 50px;
+    color:rgb(240,169,81)!important ;
+    border: 3px solid rgb(240,169,81)!important;
+    font-size: 20px!important;
+}
+.learnbtn:hover{
+    background-color:black!important ;
+    color: white!important;
+}
+.cardbtn{
+    /* height: 50px; */
+    color:rgb(240,169,81)!important ;
+    border: 3px solid rgb(240,169,81)!important;
+    /* font-size: 20px!important; */
+}
+.cardbtn:hover{
+    background-color:black!important ;
+    color: white!important;
+}
+
+.cardtitle{
+    color:rgb(240,169,81)!important;
+    font-size: 30px!important;
+}
+.cardtxt{
+    color: grey;
+    font-size: 20px;
+}
+.box{
+    border: 3px solid rgb(240,169,81)!important;
+}
+.about{
+    background-image: url('./assets/bg-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 93px;
+}
+.hdabout{
+    font-size: 70px;
+    font-weight: 900;
+    padding: 100px!important;
+    padding-left: 620px!important;
+}
+.imgser{
+    width: 100%;
+}
+.imgport{
+    width: 110%;
+    height: 70%;
+}
+.imgport4{
+    width: 100%;
+    height: 70%;
+}
+.hdclr{
+    color:rgb(240,169,81) ;
+    font-size: 30px;
+}
+.card-img, .card-img-top{
+    height: 400px;
+}
+
+@media only screen and (max-width:767px){
+.homeimg{
+    margin-left: 4px;
+}
+.cardmargin{
+    margin-bottom: 35px!important;
+}
+.cardmargin1{
+    margin-top: -46px!important;
+}
+.boxmargin{
+    margin-top: 20px!important;
+}
+.hdabout{
+    padding-left: 26px!important;
+    font-size: 64px!important;
+}
+.head-size{
+    font-size: 90px;
+}
+
+}
