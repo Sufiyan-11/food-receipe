@@ -37,7 +37,7 @@ const Home = () => {
   const getPostData = () => {
     // Axios
     // .get(`https://software-bazaar-default-rtdb.firebaseio.com/event.json`)
-    firebase.database().ref(`painting`).get()
+    firebase.database().ref(`receipe`).get()
       .then((response) => {
         setPostData(response.val())
         // setTimeout(setPostData(response.val()), 5000);
@@ -97,10 +97,10 @@ const Home = () => {
             <Card.Body>
               <Card.Title className='cardtitle'>{item[1].postTopicName}</Card.Title>
               <Card.Text className='cardtxt'>
-              {parse(`${item[1].postLongDetail.substring(0, 50)}...`)}
-              <div className='d-flex justify-content-between'>
-              <Button variant='light' size='sm' className='rounded-pill cardbtn' onClick={() => handleShow(item[1])}>View Details</Button>
-              <p className='text-end'>₹{item[1].postIsPrice}</p>
+              {parse(`${item[1].postLongDetail.substring(0, 150)}...`)}
+              <div className='text-center'>
+              {/* <Button variant='light' size='sm' className='rounded-pill cardbtn' onClick={() => handleShow(item[1])}>View Details</Button> */}
+              <a className='anchor' target='blank' href={item[1].postIsLink}>Watch Now</a>
               </div>
               </Card.Text>
             </Card.Body>
@@ -117,7 +117,7 @@ const Home = () => {
             </div>
             }
 
-        {selectedPost && (
+        {/* {selectedPost && (
         <Modal show={showModal} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>{selectedPost.postTopicName}</Modal.Title>
@@ -132,7 +132,7 @@ const Home = () => {
             </Button>
           </Modal.Footer>
         </Modal>
-      )}
+      )} */}
           </Row>
         </Container>
       </section>

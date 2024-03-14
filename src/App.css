@@ -47,6 +47,10 @@
     margin-left: 230px;
     margin-top: 236px;
 }
+.anchor{
+    text-decoration: none;
+    color: #8ED429;
+}
 .pclr{
     color: grey;
 }
@@ -72,7 +76,7 @@
 }
 
 .cardtitle{
-    color:rgb(240,169,81)!important;
+    color:#379960!important;
     font-size: 30px!important;
 }
 .cardtxt{
