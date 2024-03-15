@@ -5,7 +5,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-     <Container fluid className='mt-5 pt-5 bg-dark text-light'>
+     <Container fluid className=' pt-5 bg-dark text-light'>
       <Row>
         <Col xs lg="6">
           <p>&copy;Copyright All Rights Reserved</p>

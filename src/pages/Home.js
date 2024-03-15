@@ -50,6 +50,18 @@ const Home = () => {
     setSelectedPost(postData);
     setShowModal(true);
   };
+
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredData = postData ? Object.entries(postData)
+  .filter(item => item[1].postTopicName.toLowerCase().includes(searchQuery.toLowerCase()))
+  .sort((a, b) => a[1].postPositionNo - b[1].postPositionNo) : [];
+
+
   
   return (
     <>
@@ -65,39 +77,32 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      <section className='aboutme'>
+      
+      <section className='reciepe py-4'>
         <Container>
           <Row>
-            <Col lg={12}>
-            <Form className="d-flex mt-5">
+          <Col lg={12}>
+            <Form className="d-flex my-5">
             <Form.Control
               type="search"
               placeholder="Search Receipes..."
               className="me-2"
               aria-label="Search"
+              value={searchQuery}
+            onChange={handleSearchChange}
             />
             <Button variant="outline-success">Search</Button>
           </Form>
             </Col>
-            {/* <Col lg={6}>
-              <img src={home} className='mt-5 rounded-3 shadow img-fluid' alt='home'/>
-            </Col> */}
-          </Row>
-        </Container>
-      </section>
-      <section className='painting  mt-4 py-4'>
-        <Container>
-          <Row>
-           
-            {postData ?
-                      Object.entries(postData).sort((a, b) => a[1].postPositionNo - b[1].postPositionNo).map((item) => (
+            {postData && filteredData.length > 0 ? (
+    filteredData.map((item) => (
             <Col lg={4} className='cardmargin mb-4'>
             <Card className='shadow h-100'>
             <Card.Img variant="top" src={item[1].postImage} alt='project1'/>
             <Card.Body>
               <Card.Title className='cardtitle'>{item[1].postTopicName}</Card.Title>
               <Card.Text className='cardtxt'>
-              {parse(`${item[1].postLongDetail.substring(0, 150)}...`)}
+              {parse(`${item[1].postLongDetail.substring(0, 100)}...`)}
               <div className='text-center'>
               {/* <Button variant='light' size='sm' className='rounded-pill cardbtn' onClick={() => handleShow(item[1])}>View Details</Button> */}
               <a className='anchor' target='blank' href={item[1].postIsLink}>Watch Now</a>
@@ -106,7 +111,8 @@ const Home = () => {
             </Card.Body>
           </Card>
             </Col>
-            )) :
+           ))
+           ) : (
             <div className="row justify-content-center pt-4">
               <div className="col-lg-12">
                 <div className="noprogramAdded text-center bg-white border shadow p-5">
@@ -115,7 +121,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            }
+            )}
 
         {/* {selectedPost && (
         <Modal show={showModal} onHide={handleClose}>

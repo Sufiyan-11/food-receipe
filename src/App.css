@@ -51,13 +51,16 @@
     text-decoration: none;
     color: #8ED429;
 }
+.reciepe{
+    background-color: #F6FFFA;
+}
 .pclr{
     color: grey;
 }
 .learnbtn{
     height: 50px;
-    color:rgb(240,169,81)!important ;
-    border: 3px solid rgb(240,169,81)!important;
+    color:#379960!important ;
+    border: 3px solid #379960!important;
     font-size: 20px!important;
 }
 .learnbtn:hover{
@@ -66,9 +69,17 @@
 }
 .cardbtn{
     /* height: 50px; */
-    color:rgb(240,169,81)!important ;
-    border: 3px solid rgb(240,169,81)!important;
+    color:#379960!important ;
+    border: 3px solid #379960!important;
     /* font-size: 20px!important; */
+}
+.modalimage{
+    width: 100%;
+    height: 600px;
+}
+.modal-body{
+    color: grey;
+    font-size: 20px;
 }
 .cardbtn:hover{
     background-color:black!important ;
@@ -87,7 +98,7 @@
     border: 3px solid rgb(240,169,81)!important;
 }
 .about{
-    background-image: url('./assets/bg-image.jpg');
+    background-image: url('./assets/banner.jpg');
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 93px;
@@ -96,7 +107,6 @@
     font-size: 70px;
     font-weight: 900;
     padding: 100px!important;
-    padding-left: 620px!important;
 }
 .imgser{
     width: 100%;

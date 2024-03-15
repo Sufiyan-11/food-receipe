@@ -15,6 +15,7 @@ const config = {
 
     apiKey: "AIzaSyBs0_abeWOl29TTa8FwvEgmnjUd5Q82wJk",
     authDomain: "food-receipe-dashboard.firebaseapp.com",
+    databaseURL: "https://food-receipe-dashboard-default-rtdb.firebaseio.com",
     projectId: "food-receipe-dashboard",
     storageBucket: "food-receipe-dashboard.appspot.com",
     messagingSenderId: "621956029742",
