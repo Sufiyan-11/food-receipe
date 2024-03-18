@@ -94,6 +94,10 @@
     color: grey;
     font-size: 20px;
 }
+p{
+    color: grey;
+    font-size: 20px; 
+}
 .box{
     border: 3px solid rgb(240,169,81)!important;
 }

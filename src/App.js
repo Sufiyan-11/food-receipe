@@ -2,8 +2,8 @@
 import React from 'react';
 import Header from'./components/Header';
 import Home from './pages/Home';
-import About from './pages/About';
-import Service from './pages/Service';
+import News from './pages/News';
+import Quiz from './pages/Quiz';
 import Contact from './pages/Contact';
 import Footer from'./components/Footer';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
@@ -15,8 +15,8 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/About' component={About} />
-        <Route path='/Service' component={Service} />
+        <Route path='/News' component={News} />
+        <Route path='/Quiz' component={Quiz} />
         {/* <Route path='/Contact' component={Contact} /> */}
       </Switch>
       <Footer/>

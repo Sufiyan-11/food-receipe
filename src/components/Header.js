@@ -13,8 +13,8 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className=" w-100 justify-content-end">
             <NavLink to="/" className='astyle'>HOME</NavLink>
-            <NavLink to="/About"className='ms-5 astyle'>NEWSLETTER</NavLink>
-            <NavLink to="/Service"className='ms-5 astyle'>SERVICES</NavLink>
+            <NavLink to="/News"className='ms-5 astyle'>NEWSLETTER</NavLink>
+            <NavLink to="/Quiz"className='ms-5 astyle'>FOOD QUIZ</NavLink>
             {/* <NavLink to="/Contact"className='ms-5 astyle'>CONTACT US</NavLink> */}
           </Nav>
         </Navbar.Collapse>
