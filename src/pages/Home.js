@@ -6,18 +6,9 @@ import Axios from "axios";
 import parse from 'html-react-parser';
 
 import { Container, Row,Col, Button,Card, Modal, Form } from 'react-bootstrap';
-import brand from '../assets/brand-inverse.png';
-import home from '../assets/home.jpg';
-import project1 from '../assets/project-1.jpg';
-import project2 from '../assets/project-2.jpg';
-import project3 from '../assets/project-3.jpg';
-import project4 from '../assets/project-4.jpg';
-import project5 from '../assets/project-5.jpg';
-import project6 from '../assets/project-6.jpg';
-import user from '../assets/user.png';
-import leaf from '../assets/leaf.png';
-import house from '../assets/house.png';
-import apple from '../assets/apple-logo.png';
+import { Formik, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 
 
 const Home = () => {
@@ -61,7 +52,23 @@ const Home = () => {
   .filter(item => item[1].postTopicName.toLowerCase().includes(searchQuery.toLowerCase()))
   .sort((a, b) => a[1].postPositionNo - b[1].postPositionNo) : [];
 
-
+  
+  const handleFormSubmit = async (values, actions) => {
+    console.log("form", values);
+    try {
+      await axios.post(
+        `https://food-receipe-dashboard-default-rtdb.firebaseio.com/subscribe.json`,
+        values
+      );
+      actions.resetForm();
+      actions.setSubmitting(false);
+      alert("Form submitted successfully.");
+      window.location.reload();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      actions.setSubmitting(false);
+    }
+  };
   
   return (
     <>
@@ -72,6 +79,62 @@ const Home = () => {
               <div className='text-center text-light'>
             <h1 className='head-size'>Explore Delicious Recipes</h1>
             <h5>Discover mouth-watering recipes from our collection. Perfect for home cooking and food enthusiasts.</h5>
+
+            <Formik
+                initialValues={{
+                 
+                  email: "",
+                  
+                  postTimestamp: new Date().toUTCString(),
+                }}
+                validationSchema={Yup.object().shape({
+                  
+
+                  email: Yup.string()
+                    .email("Invalid email address")
+                    .required("Please enter your email address."),
+                 
+                })}
+                onSubmit={handleFormSubmit}
+              >
+                {(formik) => (
+                  <Form method="post">
+                   <div className='d-flex justify-content-center mt-4'>
+                    
+                    <Form.Group
+                      className="mb-3 me-3"
+                      controlId="exampleForm.ControlInput1"
+                    ><Field
+                    className={`form-control ${
+                      formik.touched.email && formik.errors.email
+                        ? "is-invalid"
+                        : ""
+                    }`}
+                    type="email"
+                    name="email"
+                    placeholder=" Enter Email address"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </Form.Group>
+               
+                
+                <Button
+                      variant="light"
+                      className="rounded-3 subsbtn"
+                      type="submit"
+                      onClick={formik.handleSubmit}
+                    >
+                      Subscribe
+                    </Button>
+                    </div>
+                  
+                  </Form>
+                )}
+              </Formik>
             </div>
             </Col>
           </Row>

@@ -63,6 +63,12 @@
     border: 3px solid #379960!important;
     font-size: 20px!important;
 }
+.subsbtn{
+    color:#379960!important ;
+    border: 3px solid #379960!important;
+    height: 40px;
+    /* width: 150px; */
+}
 .learnbtn:hover{
     background-color:black!important ;
     color: white!important;
